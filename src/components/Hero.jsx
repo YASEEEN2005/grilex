@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 
-const Hero = () => {
+const Hero = ({ onOpenReservation }) => {
   const images = [
     "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Restaurant ambient
     "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", // Food close up
@@ -57,12 +57,12 @@ const Hero = () => {
           >
             View Menu <ArrowRight size={18} />
           </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-3.5 bg-transparent border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-brand-red transition-all"
+          <button 
+            onClick={onOpenReservation}
+            className="px-8 py-3.5 bg-transparent border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-brand-red transition-all hover:scale-105 hover:shadow-lg shadow-black/20"
           >
-            Contact Us
-          </a>
+            Book a Table
+          </button>
         </div>
       </RevealOnScroll>
 

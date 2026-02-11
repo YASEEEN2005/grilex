@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Calendar } from 'lucide-react';
 import StatusBadge from './StatusBadge';
 
-const Navbar = () => {
+const Navbar = ({ onOpenReservation }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState('home');
@@ -63,12 +63,25 @@ const Navbar = () => {
                 <span className={`absolute -bottom-1 left-0 w-full h-0.5 bg-brand-yellow transform scale-x-0 group-hover:scale-x-100 transition-transform ${activeLink === link.id ? 'scale-x-100' : ''}`} />
               </a>
             ))}
+            
+            <button
+              onClick={onOpenReservation}
+              className={`px-5 py-2 rounded-full font-bold transition-colors flex items-center gap-2 border-2 ${
+                scrolled 
+                  ? 'border-brand-red text-brand-red hover:bg-brand-red hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-brand-red'
+              }`}
+            >
+              <Calendar size={18} />
+              <span>Book Table</span>
+            </button>
+
             <a 
               href="tel:07012181829"
               className="bg-brand-red text-white px-5 py-2 rounded-full font-bold hover:bg-red-700 transition-colors flex items-center gap-2 shadow-md animate-pulse"
             >
               <Phone size={18} />
-              <span>Call Now</span>
+              <span className="hidden lg:inline">Call Now</span>
             </a>
           </div>
 
@@ -85,7 +98,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-xl border-t border-gray-100">
+        <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-xl border-t border-gray-100 animate-fade-in origin-top">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <a
@@ -97,9 +110,18 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                onOpenReservation();
+              }}
+              className="w-full text-center mt-4 border-2 border-brand-red text-brand-red px-5 py-3 rounded-lg font-bold hover:bg-brand-red hover:text-white transition-colors"
+            >
+              Book a Table
+            </button>
             <a 
               href="tel:07012181829"
-              className="block w-full text-center mt-4 bg-brand-red text-white px-5 py-3 rounded-lg font-bold hover:bg-red-700"
+              className="block w-full text-center mt-2 bg-brand-red text-white px-5 py-3 rounded-lg font-bold hover:bg-red-700"
             >
               Call Now
             </a>

@@ -1,5 +1,6 @@
+import { X, ZoomIn, Instagram } from 'lucide-react';
 import { useState } from 'react';
-import { X, ZoomIn } from 'lucide-react';
+
 import RevealOnScroll from './RevealOnScroll';
 
 const Gallery = () => {
@@ -45,6 +46,49 @@ const Gallery = () => {
               </div>
             </RevealOnScroll>
           ))}
+        </div>
+
+        {/* Social Wall Section */}
+        <RevealOnScroll>
+          <div className="mt-20 mb-10 text-center">
+             <div className="flex items-center justify-center gap-2 text-brand-red font-bold tracking-wider uppercase mb-2">
+               <Instagram size={20} />
+               <span>@GrilaxRestaurant</span>
+             </div>
+             <h3 className="text-3xl font-serif font-bold text-gray-900">
+               Seen on Social
+             </h3>
+          </div>
+        </RevealOnScroll>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+           {[
+             "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+             "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80",
+             "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=600&q=80",
+             "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80"
+           ].map((src, i) => (
+             <RevealOnScroll key={`social-${i}`} delay={i * 100}>
+               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="block relative group overflow-hidden rounded-xl aspect-[4/5] md:aspect-square">
+                 <img src={src} alt="Social post" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                   <Instagram className="text-white" size={32} />
+                 </div>
+               </a>
+             </RevealOnScroll>
+           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-gray-200 rounded-full font-bold text-gray-800 hover:border-brand-red hover:bg-brand-red hover:text-white transition-all shadow-md hover:shadow-lg"
+          >
+            <Instagram size={18} />
+            Follow Us on Instagram
+          </a>
         </div>
       </div>
 

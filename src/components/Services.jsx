@@ -32,13 +32,13 @@ const Services = () => {
           {services.map((service, index) => (
             <RevealOnScroll key={index} delay={index * 100}>
               <div 
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-colors h-full"
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center hover:bg-white/10 transition-all duration-300 h-full group hover:-translate-y-2"
               >
-                <div className="w-20 h-20 mx-auto bg-brand-yellow rounded-full flex items-center justify-center text-brand-red mb-6 shadow-lg shadow-black/20 group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 mx-auto bg-brand-yellow rounded-full flex items-center justify-center text-brand-red mb-6 shadow-lg shadow-black/20 group-hover:scale-110 transition-transform duration-300 group-hover:rotate-3">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 font-serif">{service.title}</h3>
-                <p className="text-gray-200 leading-relaxed">
+                <h3 className="text-xl font-bold mb-4 font-serif group-hover:text-brand-yellow transition-colors">{service.title}</h3>
+                <p className="text-gray-200 leading-relaxed group-hover:text-white transition-colors">
                   {service.description}
                 </p>
               </div>

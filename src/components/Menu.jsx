@@ -90,7 +90,7 @@ const Menu = () => {
         </div>
 
         <div className="text-center mt-12">
-          <a download href="#" className="inline-flex items-center justify-center px-8 py-3 border-2 border-brand-red text-brand-red rounded-full font-bold hover:bg-brand-red hover:text-white transition-colors">
+          <a download href="#" className="inline-flex items-center justify-center px-8 py-3 border-2 border-brand-red text-brand-red rounded-full font-bold hover:bg-brand-red hover:text-white transition-all hover:scale-105 hover:shadow-lg">
             Download Full Menu
           </a>
         </div>

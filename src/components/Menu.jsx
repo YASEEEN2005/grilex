@@ -43,9 +43,7 @@ const Menu = () => {
         </div>
 
         {/* Category Filter */}
-// ... existing imports
 
-// ... existing code
 
         <RevealOnScroll>
           <div className="flex justify-center flex-wrap gap-4 mb-12">

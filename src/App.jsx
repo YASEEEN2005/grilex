@@ -15,7 +15,7 @@ import ReservationModal from './components/ReservationModal'
 
 import Specials from './components/Specials'
 
-import LocationPopup from './components/LocationPopup'
+import LocationModal from './components/LocationModal'
 
 function App() {
   const [isReservationOpen, setIsReservationOpen] = useState(false);
@@ -34,7 +34,7 @@ function App() {
       <Contact />
       <Footer />
       <FloatingCTA />
-      <LocationPopup />
+      <LocationModal />
       <ReservationModal isOpen={isReservationOpen} onClose={() => setIsReservationOpen(false)} />
     </div>
   )

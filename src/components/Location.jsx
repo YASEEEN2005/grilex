@@ -45,10 +45,10 @@ const Location = () => {
               </div>
             </div>
 
-            <a 
-              href="https://www.google.com/maps/dir//Grilax+Restaurant,+Vellarimala,+Kerala/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              <a 
+                href="https://maps.app.goo.gl/KyQ1Z2TxiwQjCzQUA" 
+                target="_blank" 
+                rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-brand-red text-white rounded-full font-bold shadow-lg shadow-brand-red/30 hover:bg-red-700 hover:scale-105 transition-all w-full sm:w-auto justify-center"
             >
               <Navigation size={20} /> Get Directions
